@@ -49,7 +49,7 @@
               mkdir -p $out/share/pixmaps
               mkdir -p $out/share/applications
 
-              cp $out/lib/node_modules/${pname}/assets/icon.svg $out/share/pixmaps/${pname}.svg
+              cp assets/icon.svg $out/share/pixmaps/${pname}.svg
               echo "${desktopFile}" > $out/share/applications/${pname}.desktop
             '';
 
