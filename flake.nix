@@ -42,7 +42,7 @@
 
             postInstall = ''
               makeWrapper ${pkgs.electron}/bin/electron $out/bin/${pname} \
-                --add-flags $out/lib/node_modules/${pname}/src/main.js \
+                --add-flags $out/lib/node_modules/pwa-desktop-nix/src/main.js \
                 --set PWA_URL "${configJson.url}"
 
               mkdir -p $out/share/pixmaps
