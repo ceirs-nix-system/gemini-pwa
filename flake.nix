@@ -28,7 +28,7 @@
             Type=Application
             Name=${name}
             Exec=$out/bin/${name}
-            Icon=$out/share/pixmaps/${pname}.svg
+            Icon=$out/share/pixmaps/${name}.svg
             Terminal=false
             Keywords=${configJson.keywords}
             Comment=${configJson.description}
