@@ -41,7 +41,6 @@
             };
 
             postInstall = ''
-              # Create the binary wrapper
               makeWrapper ${pkgs.electron}/bin/electron $out/bin/${pname} \
                 --add-flags $out/lib/node_modules/${pname}/src/main.js \
                 --set PWA_URL "${configJson.url}"
@@ -49,7 +48,7 @@
               mkdir -p $out/share/pixmaps
               mkdir -p $out/share/applications
 
-              cp assets/icon.svg $out/share/pixmaps/${pname}.svg
+              # cp assets/icon.svg $out/share/pixmaps/${pname}.svg
               echo "${desktopFile}" > $out/share/applications/${pname}.desktop
             '';
 
