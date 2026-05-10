@@ -34,8 +34,6 @@
             npmDepsHash = "sha256-3tIHllTGByjFaRW3piJJtkuuzRhAnJ+P76OEJ9HbCDM=";
             dontNpmBuild = true;
 
-            # nativeBuildInputs = [ pkgs.makeWrapper ];
-
             env = {
               ELECTRON_SKIP_BINARY_DOWNLOAD = 1;
             };
