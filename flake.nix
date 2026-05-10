@@ -34,7 +34,6 @@
             npmDepsHash = "sha256-3tIHllTGByjFaRW3piJJtkuuzRhAnJ+P76OEJ9HbCDM=";
             dontNpmBuild = true;
 
-            # CRITICAL: This makes 'makeWrapper' available in postInstall
             nativeBuildInputs = [ pkgs.makeWrapper ];
 
             env = {
