@@ -51,7 +51,6 @@
             '';
 
             meta = {
-              homepage = "https://github.com/udontur/${pname}";
               mainProgram = pname;
               license = pkgs.lib.licenses.mit;
               platforms = pkgs.lib.platforms.all;
