@@ -1,6 +1,6 @@
 {
   description = "PWA Desktop Nix";
-  inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
 
   outputs =
     { self, nixpkgs, ... }:
@@ -28,7 +28,7 @@
             Type=Application
             Name=${name}
             Exec=$out/bin/${name}
-            Icon=./icon.svg
+            Icon=$out/share/pixmaps/${pname}.svg
             Terminal=false
             Keywords=${configJson.keywords}
             Comment=${configJson.description}
@@ -48,10 +48,13 @@
 
             postInstall = ''
               makeWrapper ${pkgs.electron}/bin/electron $out/bin/${pname} \
-                --add-flags $out/lib/node_modules/pwa-desktop-nix/src/main.js \
+                --add-flags $out/lib/node_modules/${pname}/src/main.js \
                 --set PWA_URL "${configJson.url}"
+
+              mkdir -p $out/share/pixmaps
+              cp $out/lib/node_modules/${pname}/assets/icon.svg $out/share/pixmaps/${pname}.svg
+
               mkdir -p $out/share/applications
-              cp $out/lib/node_modules/pwa-desktop-nix/assets/icon.svg $out/share/applications/icon.svg
               echo "${desktopFile}" > $out/share/applications/${pname}.desktop
             '';
 
